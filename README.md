@@ -1,50 +1,123 @@
-# Welcome to your Expo app 👋
+# ☕ Cafetería Sayayin - App Móvil
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicación móvil desarrollada con **React Native + Expo** para gestionar pedidos, productos y usuarios de la cafetería *Sayayin*. Este proyecto forma parte de una solución completa que incluirá un backend con **NestJS** (en desarrollo).
 
-## Get started
+---
 
-1. Install dependencies
+## 📱 Tecnologías utilizadas
 
-   ```bash
-   npm install
-   ```
+- [Expo](https://expo.dev/)
+- [React Native](https://reactnative.dev/)
+- [Expo Router](https://expo.github.io/router/)
+- [Axios](https://axios-http.com/) para consumo de API REST
+- [TypeScript](https://www.typescriptlang.org/)
+- [Fake Store API](https://fakestoreapi.com/) (por ahora, hasta que se conecte con el backend real)
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+## 📁 Estructura del proyecto
 ```bash
-npm run reset-project
+
+COFFE_MOVIL/
+│
+├── app/ # Rutas y pantallas principales
+│ ├── API/ # Servicios de comunicación con APIs
+│ ├── Components/ # Componentes reutilizables (ej. alertas)
+│ ├── index.tsx # Pantalla de inicio de sesión
+│ ├── register.tsx # Pantalla de registro
+│ └── productList.tsx # Pantalla de productos
+│
+├── assets/ # Imágenes y recursos estáticos
+├── .expo/ # Configuración interna de Expo
+├── app.json # Configuración principal del proyecto
+├── tsconfig.json # Configuración de TypeScript
+└── README.md # Este archivo
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🚀 Instalación y ejecución
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1. Clona el repositorio
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+git clone https://github.com/tu-usuario/coffe-movil.git
+cd coffe-movil
+```
 
-## Join the community
+### Instala dependencias
+```bash
+npm install
+```
+###  Recomendado: Usa expo install para mantener versiones compatibles con Expo.
 
-Join our community of developers creating universal apps.
+```bash
+npx expo install
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+### Ejecutar la APP
+```bash
+npx expo start
+
+```
+### Limpia la caché si hay errores raros
+```bash
+npx expo start --clear
+
+```
+### Limpia la caché si hay errores raros
+```bash
+npx expo start --clear
+
+```
+### 🛠 Funcionalidades
+✅ Inicio de sesión
+✅ Registro de usuario
+✅ Alerta personalizada con botones de acción
+✅ Visualización de productos con Fake Store API
+🔜 Conexión al backend NestJS (en desarrollo)
+🔒 Protección de rutas para usuarios autenticados (en proceso)
+
+### 🔗 Backend NestJS
+
+El backend que se conectará a esta app está siendo desarrollado con:
+
+NestJS
+
+MySQL
+
+JWT Auth
+
+Roles de usuario (admin, empleado, cliente)
+
+API REST modular
+
+### 📌 Cuando esté listo, se conectará con esta app móvil usando Axios.
+
+📦 Comandos útiles
+```bash
+Copiar
+Editar
+npx expo install           # Instala paquetes compatibles
+npx expo start             # Ejecuta la app
+npx expo start --clear     # Ejecuta limpiando caché
+```
+### 🙋‍♂️ Autor
+Ezequiel Larios
+Desarrollador full stack en formación.
+🚀 Proyecto personal para aprendizaje y práctica profesional.
+
+### 📌 Notas
+Si tienes errores de versión, actualiza con:
+
+```bash
+Copiar
+Editar
+npx expo install expo@latest expo-router expo-image expo-blur expo-splash-screen react-native
+```
+
+El diseño aún está en mejora. Si tienes sugerencias, ¡bienvenidas!
+
+✅ Licencia
+MIT - Libre para usar, estudiar y modificar con fines educativos .
+
