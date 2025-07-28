@@ -80,8 +80,9 @@ npx expo start --clear
 
 ### 🔗 Backend NestJS
 
-El backend que se conectará a esta app está siendo desarrollado con:
-
+- **Aplicación Backend - Nest:**  
+    [Repositorio Backend](https://github.com/Ezequiel-2023/Backend_Coffee_Sayajin)
+  
 NestJS
 
 MySQL
