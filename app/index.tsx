@@ -12,6 +12,7 @@ import {
 import { Image } from 'expo-image';
 import { useRouter } from "expo-router";
 import { useState } from "react";
+import api from "./API/api";
 import MessageAlert from "./Components/MessageAlert";
 
 
@@ -25,17 +26,35 @@ export default function Index() {
   const [alertType, setAlertType] = useState<"error" | "success">("error");
   const [alertMessage, setAlertMessage] = useState<string>("");
 
-  const handleButtonClick = () => {
-    if (email === "" || password === "") {
-      setAlertMessage("Por favor, ingresa todos los campos");
+  const handleButtonClick = async () => {
+    if (!email || !password) {
+      setAlertMessage("Por favor, completa todos los campos.");
       setAlertType("error");
       setShowAlert(true);
       return;
     }
+      try {
+        const response = await api.post("/auth/login", {
+          email,
+          password,
+        });
 
-    setAlertMessage(`Bienvenido, ${email}`);
-    setAlertType("success");
-    setShowAlert(true);
+        const token = response.data.token
+
+        if (token){
+          api.defaults.headers.common['Authorization'] = ` ${token}`;
+        }
+        setAlertMessage("Inicio de sesión exitoso.");
+        setAlertType("success");  
+        setShowAlert(true);
+        
+      } catch (error) {
+        setAlertMessage("Error al iniciar sesión. Por favor, verifica tus credenciales.");
+        setAlertType("error");
+        setShowAlert(true);
+        console.error("Error al iniciar sesión:", error);
+        
+      }
   };
 
   const handleCloseAlert = () => {
@@ -107,6 +126,7 @@ export default function Index() {
     </KeyboardAvoidingView>
   );
 }
+
 
 
 
